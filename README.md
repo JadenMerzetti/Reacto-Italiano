@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Portfolio for Jaden Merzetti
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the source code for a portfolio website built using React. The website showcases various sections including an "About Me" section, a portfolio of projects, a resume, and a contact form. The code is organized into components, and this readme provides an overview of the `MainContent` component.
 
-## Available Scripts
+## MainContent Component
 
-In the project directory, you can run:
+The `MainContent` component is a key part of the portfolio website. It dynamically renders content based on the active button selected in the navigation bar. Here's an overview of the component's functionality:
 
-### `npm start`
+### State Management
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The component uses React's `useState` hook to manage the following pieces of state:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- `name`: Stores the user's name input in the contact form.
+- `email`: Stores the user's email input in the contact form.
+- `message`: Stores the user's message input in the contact form.
+- `emailError`: Stores an error message if the email input is invalid.
 
-### `npm test`
+### Input Validation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+There is a function `handleEmailChange` that validates the email input using a regular expression. If the email is invalid, it sets the `emailError` state with an error message.
 
-### `npm run build`
+### Form Submission
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When the user submits the contact form, the `handleSubmit` function is called. It checks if all required fields (name, email, and message) are filled out and if the email is valid. Depending on the validation results, it either displays an alert indicating success or prompts the user to correct errors.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Conditional Rendering
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The `MainContent` component renders different content based on the `activeButton` prop passed to it. The options are:
 
-### `npm run eject`
+- `'About Me'`: Displays information about the portfolio owner.
+- `'Portfolio'`: Displays a list of portfolio projects with descriptions and images.
+- `'Resume'`: Displays the owner's resume along with a download link.
+- `'Contact Me'`: Displays a contact form with fields for name, email, and message.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Project Showcase
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In the "Portfolio" section, the component maps over an array of project objects and renders them as individual project cards. Each card includes an image, a description, and alt text.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Credits
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This portfolio was created by **Jaden Merzetti**. If you have any questions or suggestions, please feel free to [contact me].
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
